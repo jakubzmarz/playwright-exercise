@@ -1,0 +1,28 @@
+{
+  "name": "playwright-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakubzmarz/playwright-exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakubzmarz/playwright-exercise/issues"
+  },
+  "homepage": "https://github.com/jakubzmarz/playwright-exercise#readme",
+  "devDependencies": {
+    "@ngneat/falso": "^7.1.1",
+    "@playwright/test": "^1.41.1",
+    "@types/node": "^20.11.6",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "moment": "^2.30.1",
+    "typescript": "^5.3.3"
+  }
+}

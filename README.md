@@ -1,4 +1,4 @@
-This is an example playwirght project based on 'http://www.automationpractice.pl/' (automation practise tool, all right reseved to its creators).
+This is an example playwright project based on 'http://www.automationpractice.pl/' (automation practise tool, all rights reseved to its creators).
 Test cases were generated with a help of ChatGPT 4.0.
 
 1. **Login Test**:
@@ -16,7 +16,7 @@ Test cases were generated with a help of ChatGPT 4.0.
    - **Steps**: Enter a search term in the search bar, press Enter or click the search button.
    - **Expected Outcome**: Search results matching the entered term are displayed.
 
-4. **New User Registration Test**:
+4. **New User Registration Test**: // DONE
    - **Objective**: Verify the new account creation process.
    - **Steps**: Open the registration page, fill in the required information, confirm the registration.
    - **Expected Outcome**: The user receives a confirmation of account creation and is redirected to the dashboard.

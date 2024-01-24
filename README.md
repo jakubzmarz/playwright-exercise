@@ -1,4 +1,4 @@
-This is an example playwirght project based on 'http://www.automationpractice.pl/' (automation practise tool, all right reseved to its creators).
+This is an example playwright project based on 'http://www.automationpractice.pl/' (automation practise tool, all rights reseved to its creators).
 Test cases were generated with a help of ChatGPT 4.0.
 
 1. **Login Test**:

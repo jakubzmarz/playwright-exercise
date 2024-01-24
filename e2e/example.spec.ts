@@ -3,6 +3,7 @@ import { MainPage } from '../page-objects/main-page.po';
 import { SignInPage } from "../page-objects/sign-in-page.po";
 import { UserData, getRandomUserData } from "../support/user-data.model";
 import { CreateAccountPage } from "../page-objects/create-account-page.po";
+import { DEFAULT_EMAIL, DEFAULT_PASSWORD } from "../support/consts";
 
 let mainPage: MainPage;
 let signInPage: SignInPage;
@@ -18,6 +19,16 @@ test.describe("Example automationpractice.pl tests", () => {
     await mainPage.goto();
   });
 
+  test('should be able to log in', async ({ page }) => {
+    await mainPage.signInBtn.click();
+    await signInPage.emailLoginInp.fill(DEFAULT_EMAIL);
+    await signInPage.passwordLoginInp.fill(DEFAULT_PASSWORD);
+    await signInPage.confirmSignInBtn.click();
+
+    expect(page.locator('.breadcrumb')).toContainText('My account');
+    expect(page.locator('.logout')).toBeVisible();
+  });
+
   test("should be able to register", async ({ page }) => {
     userData = getRandomUserData();
     await signInPage.goto();
@@ -30,7 +41,7 @@ test.describe("Example automationpractice.pl tests", () => {
     await createAccountPage.chooseGenderRadioBtn(userData.isFemale);
     await createAccountPage.firstNameInp.fill(userData.firstName);
     await createAccountPage.lastNameInp.fill(userData.lastName);
-    expect(createAccountPage.emailInp).toHaveValue(userData.email); // check if email typed on previous subpage is correct
+    expect(createAccountPage.emailInp).toHaveValue(userData.email); // check if email typed on previous subpage and then auto-filled on new page is correct
     await createAccountPage.passwordInp.fill(userData.password);
     await createAccountPage.daySelect.selectOption(userData.dateOfBirth.getDate().toString());
     await createAccountPage.monthSelect.selectOption(userData.dateOfBirth.getMonth().toString());

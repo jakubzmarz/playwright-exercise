@@ -4,17 +4,21 @@ import { SignInPage } from "../page-objects/sign-in-page.po";
 import { UserData, getRandomUserData } from "../support/user-data.model";
 import { CreateAccountPage } from "../page-objects/create-account-page.po";
 import { DEFAULT_EMAIL, DEFAULT_PASSWORD } from "../support/consts";
+import { logUserIn } from "../support/actions.helper";
+import { TopMenuCmp } from "../page-objects/components/top-menu.cmp";
 
 let mainPage: MainPage;
 let signInPage: SignInPage;
 let createAccountPage: CreateAccountPage;
 let userData: UserData;
+let topMenuCmp: TopMenuCmp;
 
 test.describe("Example automationpractice.pl tests", () => {
   test.beforeEach(async ({ page }) => {
     mainPage = new MainPage(page);
     signInPage = new SignInPage(page);
     createAccountPage = new CreateAccountPage(page);
+    topMenuCmp = new TopMenuCmp(page);
 
     await mainPage.goto();
   });
@@ -27,6 +31,12 @@ test.describe("Example automationpractice.pl tests", () => {
 
     expect(page.locator('.breadcrumb')).toContainText('My account');
     expect(page.locator('.logout')).toBeVisible();
+  });
+
+  test.only('should be able to add a product to a cart', async ({ page }) => {
+    await logUserIn(page, DEFAULT_EMAIL, DEFAULT_PASSWORD);
+    await topMenuCmp.tShirtsMenuItem.click();
+    expect(page.locator('.content_scene_cat_bg')).toBeVisible();
   });
 
   test("should be able to register", async ({ page }) => {

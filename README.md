@@ -1,12 +1,12 @@
 This is an example playwright project based on 'http://www.automationpractice.pl/' (automation practise tool, all rights reseved to its creators).
 Test cases were generated with a help of ChatGPT 4.0.
 
-1. **Login Test**:
+1. **Login Test**: // DONE
    - **Objective**: Verify that a user can log in with valid credentials.
    - **Steps**: Open the login page, enter a valid email and password, click the login button.
    - **Expected Outcome**: The user is redirected to their profile or dashboard page.
 
-2. **Add Product to Cart Test**:
+2. **Add Product to Cart Test**: // IN PROGRESS
    - **Objective**: Check if a user can add a product to the cart.
    - **Steps**: Select a product, click the “Add to Cart” button, proceed to the cart.
    - **Expected Outcome**: The selected product is visible in the cart.
